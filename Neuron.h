@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//TODO:change later, see: Neuron class .cpp file
 extern const int RANDOM_MAX;
 
 template <typename T>
@@ -17,6 +18,7 @@ private:
 public:
     Neuron(int n);
     ~Neuron();
+    double weighted_sum(double *inputs);
     double activate(double *inputs);
 	void printWeights();
 };
