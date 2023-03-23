@@ -25,16 +25,16 @@ Neuron::~Neuron(){
 double Neuron::weightedSum(double *inputs){
 	double weighted_sum;
 	for(int i=0;i<num_weights;i++){
-		weighted_sum+=inputs[i]*weights[i]
+		weighted_sum+=inputs[i]*weights[i];
 	}
-	return weighted_sum
+	return weighted_sum;
 }
 
 //Neuron activation function, uses weighted_sum()
 //TODO: review function pointer, possibly subject to change 
 double Neuron::activate(double *inputs, double (*activation_function)(double)){
-	double weighted_sum=Neuron.weightedSum()
-	return activation_function(weightedSum)
+	double weighted_sum=Neuron.weightedSum();
+	return activation_function(weightedSum);
 }
 
 //Neuron printing weights function

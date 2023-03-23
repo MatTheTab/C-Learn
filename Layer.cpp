@@ -3,7 +3,7 @@
 //Layer constructor function
 Layer::Layer(int _num_neurons){
 	// Initializing the Layer with set number of neurons
-	this->num_neurons=_num_neurons
+	this->num_neurons=_num_neurons;
 	neurons = new neuron[_num_neurons];
 }
 
@@ -17,9 +17,9 @@ Neuron::~Neuron(){
 double Neuron::weightedSum(double *inputs){
 	double weighted_sum;
 	for(int i=0;i<num_neurons;i++){
-		weighted_sum+=inputs[i]*weights[i]
+		weighted_sum+=inputs[i]*weights[i];
 	}
-	return weighted_sum
+	return weighted_sum;
 }
 
 //Layer printing weights function
