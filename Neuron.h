@@ -6,10 +6,12 @@
 
 using namespace std;
 
+extern const int RANDOM_MAX;
+
 template <typename T>
 class Neuron {
 private:
-    int n;
+    int num_weights;
     double* weights;
 
 public:
