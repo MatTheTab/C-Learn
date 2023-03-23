@@ -9,7 +9,6 @@ using namespace std;
 //TODO:change later, see: Neuron class .cpp file
 extern const int RANDOM_MAX;
 
-template <typename T>
 class Neuron {
 private:
     int num_weights;
