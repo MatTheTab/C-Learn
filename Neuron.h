@@ -15,9 +15,9 @@ private:
     double* weights;
 
 public:
-    Neuron(int n);
+    Neuron(int _num_weights);
     ~Neuron();
-    double weighted_sum(double *inputs);
+    double weightedSum(double *inputs);
     double activate(double *inputs);
 	void printWeights();
 };

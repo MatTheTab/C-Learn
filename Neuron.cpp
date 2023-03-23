@@ -7,7 +7,7 @@ const int RANDOM_MAX=10;
 Neuron::Neuron(int _num_weights){
 	// Initializing the Neuron with a set number of weights
 	this->num_weights=_num_weights
-	weights = new double[n];
+	weights = new double[num_weights];
         // Initializing weights randomly
         for (int i = 0; i < n; i++) {
         	//TODO: Later change this to implement common random initialization practices
@@ -22,7 +22,7 @@ Neuron::~Neuron(){
 }
 
 //Neuron weighted sum function
-double Neuron::weighted_sum(double *inputs){
+double Neuron::weightedSum(double *inputs){
 	double weighted_sum;
 	for(int i=0;i<n;i++){
 		weighted_sum+=inputs[i]*weights[i]
@@ -33,8 +33,8 @@ double Neuron::weighted_sum(double *inputs){
 //Neuron activation function, uses weighted_sum()
 //TODO: review function pointer, possibly subject to change 
 double Neuron::activate(double *inputs, double (*activation_function)(double)){
-	double weighted_sum=Neuron.weighted_sum()
-	return activation_function(weighted_sum)
+	double weighted_sum=Neuron.weightedSum()
+	return activation_function(weightedSum)
 }
 
 //Neuron printing weights function
