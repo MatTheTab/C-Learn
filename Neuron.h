@@ -4,8 +4,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 //TODO:change later, see: Neuron class .cpp file
 extern const int RANDOM_MAX;
 

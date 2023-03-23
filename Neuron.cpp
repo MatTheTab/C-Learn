@@ -9,7 +9,7 @@ Neuron::Neuron(int _num_weights){
 	this->num_weights=_num_weights
 	weights = new double[num_weights];
         // Initializing weights randomly
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < num_weights; i++) {
         	//TODO: Later change this to implement common random initialization practices
             weights[i] = static_cast<double>(rand()) / static_cast<double>(RAND_MAX);
         }
@@ -24,7 +24,7 @@ Neuron::~Neuron(){
 //Neuron weighted sum function
 double Neuron::weightedSum(double *inputs){
 	double weighted_sum;
-	for(int i=0;i<n;i++){
+	for(int i=0;i<num_weights;i++){
 		weighted_sum+=inputs[i]*weights[i]
 	}
 	return weighted_sum
@@ -39,7 +39,7 @@ double Neuron::activate(double *inputs, double (*activation_function)(double)){
 
 //Neuron printing weights function
 void Neuron::printWeights(){
-	for(int i=0;i<n;i++){
+	for(int i=0;i<num_weights;i++){
 		std::cout << "Weight " << i << ": " << weights[i] << std::endl;
 	}
 }
