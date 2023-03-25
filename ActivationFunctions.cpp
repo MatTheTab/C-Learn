@@ -15,7 +15,7 @@ double relu(double input){
 
 //Leaky Relu activation function
 double leakyRelu(double input, double alpha=0.01) {
-	return std::max(alpha*input,input)
+	return std::max(alpha*input,input);
 }
 
 //Sigmoid activation function
@@ -29,7 +29,7 @@ double tanh(double input) {
 }
 
 //Softmax activation function
-void softmax(double *input,double numerator_input, int input_size) {
+double softmax(double *input,double numerator_input, int input_size) {
 	double denumerator_sum=0;
 	for(int i=0;i<input_size;i++){
 		denumerator_sum+=std::exp(input[i]);
@@ -39,8 +39,9 @@ void softmax(double *input,double numerator_input, int input_size) {
 
 //ELU activation function
 double elu(double input, double alpha=0.01){
-	if input<0:
+	if (input<0){
 		return alpha*(std::exp(input)-1);
+}
 	return input;
 }
 
@@ -52,5 +53,5 @@ double swish(double input, double beta=1){
 //GELU activation function
 double gelu(double input) {
     const double PI = std::atan(1.0)*4;
-    return x * 0.5 * (1.0 + std::tanh(std::sqrt(2.0/PI) * (x + 0.044715 * std::pow(input, 3))));
+    return input * 0.5 * (1.0 + std::tanh(std::sqrt(2.0/PI) * (input + 0.044715 * std::pow(input, 3))));
 }

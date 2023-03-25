@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "neuron.h"
+#include "Neuron.cpp"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ int main() {
     int num_weights = 3;
     double expected_output = 7.0;
 
-    Neuron neuron(num_weights, weights);
+    Neuron neuron(num_weights);
     double actual_output = neuron.weightedSum(inputs);
 
     assert(actual_output == expected_output);

@@ -11,7 +11,7 @@ class Neuron {
 private:
     int num_weights;
     double* weights;
-    double (*activation_function)(double)
+    double (*activation_function)(double);
 
 public:
     Neuron(int _num_weights);
