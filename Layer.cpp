@@ -13,6 +13,11 @@ Neuron::~Neuron(){
     delete[] neurons;
 }
 
+//Setting layer loss function
+void setLoss(double (*_loss_function)(double)){
+	this->loss_function=_loss_function;
+}
+
 //Layer feedForwards() function
 double Neuron::weightedSum(double *inputs){
 	double weighted_sum;
@@ -20,6 +25,16 @@ double Neuron::weightedSum(double *inputs){
 		weighted_sum+=inputs[i]*weights[i];
 	}
 	return weighted_sum;
+}
+
+//Calculating loss
+//TODO: change this, because I do not know what to do with inputs yet
+double getLoss(double value){
+	double activation_values[num_neurons];
+	for(int i=0;i<num_neurons;i++){
+		activation_values[i]=neurons[i]->activate();
+	}
+	getLoss(value, activation_values);
 }
 
 //Layer printing weights function

@@ -12,6 +12,7 @@ int main() {
     double expected_output = 7.0;
 
     Neuron neuron(num_weights);
+    neuron.setWeights(weights);
     double actual_output = neuron.weightedSum(inputs);
 
     assert(actual_output == expected_output);

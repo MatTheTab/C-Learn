@@ -24,6 +24,13 @@ Neuron::~Neuron(){
     delete[] weights;
 }
 
+//Neuron setWeights function
+void Neuron::setWeights(double* new_weights){
+	for(int i=0;i<num_weights;i++){
+		weights[i]=new_weights[i];
+	}
+}
+
 //Neuron weighted sum function
 double Neuron::weightedSum(double *inputs){
 	double weighted_sum;
