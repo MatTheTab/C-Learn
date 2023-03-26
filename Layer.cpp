@@ -1,4 +1,5 @@
 # include "Layer.h"
+# include "Neuron.cpp"
 
 //Layer constructor function
 Layer::Layer(int _num_neurons){

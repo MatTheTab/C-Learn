@@ -27,7 +27,7 @@ double sigmoid(double input) {
 }
 
 //Tanh activation function
-double tanh(double input) {
+double tanh_act(double input) {
 	return std::tanh(input);
 }
 

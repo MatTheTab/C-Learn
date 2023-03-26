@@ -1,5 +1,6 @@
 # include "Neuron.h"
 # include "ActivationFunctions.h"
+# include "ActivationFunctions.cpp"
 
 //TODO: Later change the RANDOM_MAX to implement common random initialization practices
 const int RANDOM_MAX=10;
