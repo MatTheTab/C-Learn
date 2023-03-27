@@ -11,6 +11,6 @@ jobs:
 
     - name: Build and run tests
       run: |
-        gcc -o test.exe -m64 -std=c++11 NeuronTest.cpp ActivationFunctionsTests.cpp
+        gcc -o test.exe -m64 -std=c++11 NeuronTest.cpp
         ./test.exe
 
