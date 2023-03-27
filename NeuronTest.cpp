@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cassert>
-#include "neuron.h"
+#include "Neuron.h"
 #include "Neuron.cpp"
 
 using namespace std;
