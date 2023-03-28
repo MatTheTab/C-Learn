@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -11,6 +11,7 @@ jobs:
 
     - name: Build and run tests
       run: |
-        gcc -o test.exe -m64 -std=c++11 NeuronTest.cpp ActivationFunctionsTests.cpp
-        ./test.exe
-
+        g++ -o test1.exe NeuronTest.cpp
+        g++ -o test2.exe ActivationFunctionsTests.cpp
+        ./test1.exe
+        ./test2.exe
