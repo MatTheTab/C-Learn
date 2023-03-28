@@ -9,7 +9,7 @@ Layer::Layer(int _num_neurons){
 }
 
 //Layer destructor function
-Neuron::~Neuron(){
+Layer::~Layer(){
 	//Deleting neurons
     delete[] neurons;
 }
@@ -20,12 +20,12 @@ void setLoss(double (*_loss_function)(double)){
 }
 
 //Layer feedForwards() function
-double Neuron::weightedSum(double *inputs){
-	double weighted_sum;
+//TODO: change later
+double Layer::feedForwards(double *inputs){
 	for(int i=0;i<num_neurons;i++){
-		weighted_sum+=inputs[i]*weights[i];
+		neurons[i].activate(inputs[i])
 	}
-	return weighted_sum;
+	return 1.0
 }
 
 //Calculating loss
