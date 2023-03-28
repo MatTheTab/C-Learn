@@ -11,5 +11,5 @@ jobs:
 
     - name: Build and run tests
       run: |
-        gcc -o test.exe -m64 -std=c++11 NeuronTest.cpp -static-libgcc
+        gcc -o test.exe -m64 -std=c++17 NeuronTest.cpp -static-libgcc
         ./test.exe
