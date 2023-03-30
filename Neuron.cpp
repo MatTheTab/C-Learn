@@ -43,9 +43,9 @@ double Neuron::weightedSum(double *inputs){
 
 //Neuron activation function, uses weighted_sum()
 //TODO: review function pointer, possibly subject to change 
-double Neuron::activate(double *inputs){
+void Neuron::activate(double *inputs){
 	double weighted_sum=this->weightedSum(inputs);
-	return activation_function(weighted_sum);
+	this->value=activation_function(weighted_sum);
 }
 
 //Neuron printing weights function

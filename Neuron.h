@@ -12,6 +12,7 @@ private:
     int num_weights;
     double* weights;
     double (*activation_function)(double);
+    double value;
 
 public:
     Neuron(int _num_weights);
@@ -19,7 +20,8 @@ public:
     void setWeights(double* new_weights);
     void setActivationFunction(double (*_activation_function)(double));
     double weightedSum(double *inputs);
-    double activate(double *inputs);
+    void activate(double *inputs);
+    void assign_value(double _value);
 	void printWeights();
 };
 

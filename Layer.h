@@ -10,14 +10,15 @@ class Layer{
 private:
 	int num_neurons;
     Neuron* neurons;
-    double (*loss_function)(double*, double, int);
+    typedef double (*Loss_Function)(double*, double, int);
+	Loss_Function loss_function;
     Layer* next_layer;
 
 public:
     Layer(int num_neurons);
     ~Layer();
     double feedForwards(double *inputs);
-    void setLoss(double (*_loss_function)(double));
+    void setLoss(Loss_Function _loss_function);
     double* getLoss(double value, bool change_neuron_vals=true);
 	void printWeights();
 };

@@ -5,8 +5,13 @@
 Layer::Layer(int _num_neurons){
 	// Initializing the Layer with set number of neurons
 	this->num_neurons=_num_neurons;
-	neurons = new Neuron[_num_neurons];
+	Neuron* neurons = (Neuron*)malloc(sizeof(Neuron)*_num_neurons);
+    // calling constructor
+    for (int i = 0; i < _num_neurons; i++) {
+        neurons[i] = Neuron(1);
+    }
 }
+
 
 //Layer destructor function
 Layer::~Layer(){
@@ -15,7 +20,7 @@ Layer::~Layer(){
 }
 
 //Setting layer loss function
-void setLoss(double (*_loss_function)(double)){
+void setLoss(Loss_Function _loss_function){
 	loss_function=_loss_function;
 }
 
@@ -35,14 +40,14 @@ double* getLoss(double *inputs, bool change_neuron_vals){
 	}
 	double output[num_neurons];
 	for(int j=0;j<num_neurons;j++){
-		output[j]=loss_function(activation_values,activation_functions[j],num_neurons)
+		output[j]=loss_function(activation_values,activation_functions[j],num_neurons);
 	}
 	if(change_neuron_vals){
 		for(int k; k<num_neurons;k++){
-			//here change the value of neuron
+			neurons[k]->assign_value(output[k]);
 		}
 	}
-	return output
+	return output;
 }
 
 //Layer printing weights function
