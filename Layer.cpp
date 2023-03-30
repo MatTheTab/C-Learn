@@ -20,7 +20,7 @@ Layer::~Layer(){
 }
 
 //Setting layer loss function
-void setLoss(Loss_Function _loss_function){
+void Layer::setLoss(Loss_Function _loss_function){
 	loss_function=_loss_function;
 }
 
@@ -28,30 +28,32 @@ void setLoss(Loss_Function _loss_function){
 //TODO: change later
 double Layer::feedForwards(double *inputs){
 	for(int i=0;i<num_neurons;i++){
-		neurons[i].activate(inputs[i])
+		neurons[i].activate(&inputs[i]);
 	}
 }
 
 //Calculating loss
-double* getLoss(double *inputs, bool change_neuron_vals){
-	double activation_values[num_neurons];
+double* Layer::getLoss(double *inputs, bool change_neuron_vals){
+	double* activation_values= new double[num_neurons];
 	for(int i=0;i<num_neurons;i++){
-		activation_values[i]=neurons[i]->activate();
+		//TODO: placeholder value change once you know how to deal with neuron's outputs
+		activation_values[i]=neurons[i].activate(inputs);
 	}
 	double output[num_neurons];
 	for(int j=0;j<num_neurons;j++){
-		output[j]=loss_function(activation_values,activation_functions[j],num_neurons);
+		//TODO: placeholder values, change once you know what to do with neuron's outputs
+		output[j]=loss_function(activation_values,10,num_neurons);
 	}
 	if(change_neuron_vals){
 		for(int k; k<num_neurons;k++){
-			neurons[k]->assign_value(output[k]);
+			neurons[k].assign_value(output[k]);
 		}
 	}
 	return output;
 }
 
 //Layer printing weights function
-void Neuron::printWeights(){
+void Layer::printWeights(){
 	std::cout<<"Printing Weights at Layer: "<<std::endl;
 	for(int i=0;i<num_neurons;i++){
 		//Printing Individual neuron weights
