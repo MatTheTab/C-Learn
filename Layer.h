@@ -21,7 +21,7 @@ public:
     void inputValues(double *inputs);
     void feedForwards();
     void setLoss(Loss_Function _loss_function);
-    double* getLoss(double* inputs, bool change_neuron_vals=true);
+    double* getLoss(bool change_neuron_vals=true, double* inputs=NULL, bool manual_input=false);
 	void printWeights();
 	double* getValues();
 	int getNumNeurons();

@@ -40,17 +40,24 @@ void Layer::feedForwards(){
 }
 
 //Calculating loss
-double* Layer::getLoss(double *inputs, bool change_neuron_vals){
+double* Layer::getLoss(bool change_neuron_vals, double* inputs, bool manual_input){
 	double* activation_values= new double[num_neurons];
-	for(int i=0;i<num_neurons;i++){
-		//TODO: placeholder value change once you know how to deal with neuron's outputs
-		//TODO: Fix bug here
-		activation_values[i]=neurons[i].activate(inputs);
+	double* prev_layer_output=prev_layer->getValues();
+	if(manual_input){
+		for(int i=0;i<num_neurons;i++){
+			//TODO: Fix bug here
+			activation_values[i]=neurons[i].activate(inputs);
+		}
+	}
+	else{
+		for(int i=0;i<num_neurons;i++){
+			//TODO: Fix bug here
+			activation_values[i]=neurons[i].activate(prev_layer_output);
+		}
 	}
 	double output[num_neurons];
 	for(int j=0;j<num_neurons;j++){
-		//TODO: placeholder values, change once you know what to do with neuron's outputs
-		output[j]=loss_function(activation_values,10,num_neurons);
+		output[j]=loss_function(activation_values,neurons[j].getValue(),num_neurons);
 	}
 	if(change_neuron_vals){
 		for(int k; k<num_neurons;k++){
