@@ -57,5 +57,5 @@ void Neuron::printWeights(){
 
 //Neuron printing values function
 void Neuron::printValues(){
-	std::count<<"Value= "<<this->value<<std::endl;
+	std::cout<<"Value= "<<this->value<<std::endl;
 }
