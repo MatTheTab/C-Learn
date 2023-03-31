@@ -22,6 +22,7 @@ public:
     double weightedSum(double *inputs);
     void activate(double *inputs);
     void assign_value(double _value);
+    void printValues();
 	void printWeights();
 };
 

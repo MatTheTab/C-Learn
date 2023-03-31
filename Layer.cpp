@@ -37,6 +37,7 @@ double* Layer::getLoss(double *inputs, bool change_neuron_vals){
 	double* activation_values= new double[num_neurons];
 	for(int i=0;i<num_neurons;i++){
 		//TODO: placeholder value change once you know how to deal with neuron's outputs
+		//TODO: Fix bug here
 		activation_values[i]=neurons[i].activate(inputs);
 	}
 	double output[num_neurons];
