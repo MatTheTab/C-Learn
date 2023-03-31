@@ -24,11 +24,18 @@ void Layer::setLoss(Loss_Function _loss_function){
 	loss_function=_loss_function;
 }
 
+//Layer function for manual value input(required for first layer of a network)
+void Layer::inputValues(double* inputs){
+		for(int i=0;i<num_neurons;i++){
+		neurons[i].activate(inputs);
+	}
+}
+
 //Layer feedForwards() function
-//TODO: change later
-double Layer::feedForwards(double *inputs){
+void Layer::feedForwards(){
+	double* prev_layer_output=prev_layer->getValues();
 	for(int i=0;i<num_neurons;i++){
-		neurons[i].activate(&inputs[i]);
+		neurons[i].activate(prev_layer_output);
 	}
 }
 
@@ -60,4 +67,23 @@ void Layer::printWeights(){
 		//Printing Individual neuron weights
 		neurons[i].printWeights();
 	}
+}
+
+//Layer function for getting values of neurons
+double* Layer::getValues(){
+	double* neuron_values= new double[num_neurons];
+	for(int i=0;i<num_neurons;i++){
+		neuron_values[i]=neurons[i].getValue();
+	}
+	return neuron_values;
+}
+
+//Layer function for getting number of neurons
+int Layer::getNumNeurons(){
+	return num_neurons;
+}
+
+//Layer function for setting the previous layer
+void Layer::setPreviousLayer(Layer* _prev_layer){
+	prev_layer=_prev_layer;
 }

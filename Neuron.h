@@ -24,6 +24,7 @@ public:
     void assign_value(double _value);
     void printValues();
 	void printWeights();
+	double getValue();
 };
 
 #endif

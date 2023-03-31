@@ -13,15 +13,19 @@ private:
 	int num_neurons;
     Neuron* neurons;
 	Loss_Function loss_function;
-    Layer* next_layer;
+    Layer* prev_layer;
 
 public:
     Layer(int num_neurons);
     ~Layer();
-    double feedForwards(double *inputs);
+    void inputValues(double *inputs);
+    void feedForwards();
     void setLoss(Loss_Function _loss_function);
     double* getLoss(double* inputs, bool change_neuron_vals=true);
 	void printWeights();
+	double* getValues();
+	int getNumNeurons();
+	void setPreviousLayer(Layer* _prev_layer);
 };
 
 #endif

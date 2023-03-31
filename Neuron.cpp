@@ -59,3 +59,8 @@ void Neuron::printWeights(){
 void Neuron::printValues(){
 	std::cout<<"Value= "<<this->value<<std::endl;
 }
+
+//Neuron getValue() function
+double Neuron::getValue(){
+	return value;
+}
