@@ -41,14 +41,18 @@ void Layer::feedForwards(){
 
 //Calculating loss
 double* Layer::getLoss(bool change_neuron_vals, double* inputs, bool manual_input){
+	//Declare initially empty array of activation values for neurons of this layer
 	double* activation_values= new double[num_neurons];
+	//Initialy empty array of output values of neurons from previous layer
 	double* prev_layer_output=prev_layer->getValues();
+	//Allow for possibility of manual data insertion into the layer
 	if(manual_input){
 		for(int i=0;i<num_neurons;i++){
 			//TODO: Fix bug here
 			activation_values[i]=neurons[i].activate(inputs);
 		}
 	}
+	//Default course of action, calculate values for previous layer
 	else{
 		for(int i=0;i<num_neurons;i++){
 			//TODO: Fix bug here
@@ -56,9 +60,11 @@ double* Layer::getLoss(bool change_neuron_vals, double* inputs, bool manual_inpu
 		}
 	}
 	double output[num_neurons];
+	//Apply loss function for all neurons in this layer
 	for(int j=0;j<num_neurons;j++){
 		output[j]=loss_function(activation_values,neurons[j].getValue(),num_neurons);
 	}
+	//Allow for possibility of changing neuron's values in this layer
 	if(change_neuron_vals){
 		for(int k; k<num_neurons;k++){
 			neurons[k].assign_value(output[k]);
