@@ -64,3 +64,8 @@ void Neuron::printValues(){
 double Neuron::getValue(){
 	return value;
 }
+
+//Neuron assign value function
+void Neuron::assign_value(double _value){
+	this->value=_value;
+}

@@ -48,18 +48,18 @@ double* Layer::getLoss(bool change_neuron_vals, double* inputs, bool manual_inpu
 	//Allow for possibility of manual data insertion into the layer
 	if(manual_input){
 		for(int i=0;i<num_neurons;i++){
-			//TODO: Fix bug here
-			activation_values[i]=neurons[i].activate(inputs);
+			neurons[i].activate(inputs);
+			activation_values[i]=neurons[i].getValue();
 		}
 	}
 	//Default course of action, calculate values for previous layer
 	else{
 		for(int i=0;i<num_neurons;i++){
-			//TODO: Fix bug here
-			activation_values[i]=neurons[i].activate(prev_layer_output);
+			neurons[i].activate(prev_layer_output);
+			activation_values[i]=neurons[i].getValue();
 		}
 	}
-	double output[num_neurons];
+	double* output=new double[num_neurons];
 	//Apply loss function for all neurons in this layer
 	for(int j=0;j<num_neurons;j++){
 		output[j]=loss_function(activation_values,neurons[j].getValue(),num_neurons);
@@ -70,6 +70,8 @@ double* Layer::getLoss(bool change_neuron_vals, double* inputs, bool manual_inpu
 			neurons[k].assign_value(output[k]);
 		}
 	}
+	delete[] activation_values;
+	delete[] prev_layer_output;
 	return output;
 }
 
