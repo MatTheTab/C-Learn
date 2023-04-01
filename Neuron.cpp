@@ -1,16 +1,14 @@
 # include "Neuron.h"
-# include "ActivationFunctions.h"
-# include "ActivationFunctions.cpp"
 
 //TODO: Later change the RANDOM_MAX to implement common random initialization practices
 const int RANDOM_MAX=10;
 
 //Neuron constructor function
-Neuron::Neuron(int _num_weights){
+Neuron::Neuron(int _num_weights, double (*_activation_function)(double)){
 	// Initializing the Neuron with a set number of weights
 	this->num_weights=_num_weights;
 	//TODO: possibly change this later
-	this->activation_function=&linear;
+	this->activation_function=_activation_function;
 	weights = new double[num_weights];
         // Initializing weights randomly
         for (int i = 0; i < num_weights; i++) {
