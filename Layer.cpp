@@ -2,21 +2,21 @@
 # include "Neuron.cpp"
 
 //Layer constructor function
-Layer::Layer(int _num_neurons, bool add_prev_layer, Layer* _prev_layer){
+Layer::Layer(int _num_neurons, double (*_activation_function)(double), bool add_prev_layer, Layer* _prev_layer){
 	//Initializing the Layer with set number of neurons
 	this->num_neurons=_num_neurons;
 	Neuron* neurons = (Neuron*)malloc(sizeof(Neuron)*_num_neurons);
     //Calling constructor
     if(add_prev_layer){
     	this->prev_layer=_prev_layer;
-    	for (int i = 0; i < _num_neurons; i++) {
-        	neurons[i] = Neuron(_prev_layer->getNumNeurons());
+    	for (int i = 0; i < _num_neurons; i++){
+        	neurons[i] = Neuron(_prev_layer->getNumNeurons(), _activation_function);
 			}
 	}
 	else{
 		for (int i = 0; i < _num_neurons; i++) {
 		//Declare as input layer
-		neurons[i] = Neuron(1);
+		neurons[i] = Neuron(1, _activation_function);
 			}
 	}
 }
