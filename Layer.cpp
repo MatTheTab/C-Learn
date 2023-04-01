@@ -111,3 +111,10 @@ int Layer::getNumNeurons(){
 void Layer::setPreviousLayer(Layer* _prev_layer){
 	prev_layer=_prev_layer;
 }
+
+//Layer set weights function
+void Layer::setWeights(double** new_weights){
+	for(int i=0;i<num_neurons;i++){
+		neurons->setWeights(new_weights[i]);
+	}
+}

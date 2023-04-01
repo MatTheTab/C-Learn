@@ -7,7 +7,6 @@
 
 typedef double (*Loss_Function)(double*, double, int);
 
-//TODO:implement connections between layers (could be at neuron level)
 class Layer{
 private:
 	int num_neurons;
@@ -26,6 +25,7 @@ public:
 	double* getValues();
 	int getNumNeurons();
 	void setPreviousLayer(Layer* _prev_layer);
+	void setWeights(double** new_weights);
 };
 
 #endif
