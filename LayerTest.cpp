@@ -15,7 +15,7 @@ int main() {
     double weights6[] = {1,1,1,1,1};
     int num_weights = 5;
     
-    Layer input_layer = new Layer(5);
-    Layer output_layer = new Layer(6,leaky_relu,true,*input_layer);
+    Layer* input_layer = new Layer(5);
+	Layer* output_layer = new Layer(6,relu,true,input_layer);
     return 0;
 }

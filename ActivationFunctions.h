@@ -3,6 +3,7 @@
 #ifndef ActivationFunctionsH
 #define ActivationFunctionsH
 //---------------------------------------------------------------------------
+//TODO: change this to structure
 double linear(double input);
 double relu(double input);
 double leakyRelu(double input, double alpha=0.01);
