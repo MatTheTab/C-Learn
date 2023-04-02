@@ -14,6 +14,7 @@ bool isEqual(double* arr1, double* arr2, int arr_size){
     return true;
 }
 
+//TODO: Fix, does not work
 int main() {
     double vals[6][5] = {
 	{1,1,1,1,1},
