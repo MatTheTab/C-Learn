@@ -14,7 +14,7 @@ bool isEqual(double* arr1, double* arr2, int arr_size){
     return true;
 }
 
-//TODO: Fix, does not work
+//TODO: Fix, does not work, bug is in Layer's setWeights() method
 int main() {
     double vals[6][5] = {
 	{1,1,1,1,1},
@@ -35,7 +35,7 @@ int main() {
 			}
 		}
 	double inputs[5]={1,2,5.5,-3,0};
-
+	
     
     Layer* input_layer = new Layer(5);
 	Layer* output_layer = new Layer(6,relu,true,input_layer);
