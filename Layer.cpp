@@ -14,9 +14,11 @@ Layer::Layer(int _num_neurons, double (*_activation_function)(double), bool add_
 			}
 	}
 	else{
+		double new_weights[1]={1.0};
 		for (int i = 0; i < _num_neurons; i++) {
 		//Declare as input layer
 		neurons[i] = Neuron(1, _activation_function);
+		neurons[i].setWeights(new_weights);
 			}
 	}
 }
@@ -36,7 +38,7 @@ void Layer::setLoss(Loss_Function _loss_function){
 //Layer function for manual value input(required for first layer of a network)
 void Layer::inputValues(double* inputs){
 		for(int i=0;i<num_neurons;i++){
-		neurons[i].activate(inputs);
+			neurons[i].activate(inputs);
 	}
 }
 
