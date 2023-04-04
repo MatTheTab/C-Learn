@@ -5,6 +5,9 @@
 #include <vector>
 #include "Layer.h"
 
+//TODO:
+// Later add functionality so that you can add a single neuron to a chosen layer
+
 class Network{
 private:
 	std::vector<Layer> layers;
@@ -18,7 +21,6 @@ public:
 	void add(Layer* new_layers; int position);
 	void appendNetwork(Network new_network);
 	void addNetwork(Network new_network, int position);
-	void add(Layer );
 };
 
 #endif
