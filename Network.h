@@ -13,14 +13,16 @@ private:
 	std::vector<Layer> layers;
 public:
 	Network();
+	Network(std::vector<Layer> new_layers);
+	Network(Layer* new_layers, int num_new_layers);
 	void append(Layer new_layer);
 	void append(std::vector<Layer> new_layers);
 	void append(Layer* new_layers, int num_new_layers);
-	void add(Layer new_layer, int position);
-	void add(std::vector<Layer> new_layers, int position);
-	void add(Layer* new_layers; int position);
+	void insert(Layer new_layer, int position);
+	void insert(std::vector<Layer> new_layers, int position);
+	void insert(Layer* new_layers; int position);
 	void appendNetwork(Network new_network);
-	void addNetwork(Network new_network, int position);
+	void insertNetwork(Network new_network, int position);
 };
 
 #endif
