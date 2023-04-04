@@ -19,12 +19,12 @@ Network::Network(Layer* new_layers){
 
 //Network append a single layer function
 void Network::append(Layer new_layer){
-	
+	layers.push_back(new_layer);
 }
 
 //Network append vector of layers function
 void Network::append(std::vector<Layer> new_layers){
-	
+    layers.insert(layers.end(), new_layers.begin(), new_layers.end());
 }
 
 //Network append an array of layers function
