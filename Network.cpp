@@ -21,6 +21,12 @@ Network::Network(Layer* new_layers){
     layers = std::vector<Layer>(new_layers, new_layers + array_size);
 }
 
+std::vector<Layer> getLayers(){
+	//TODO:
+	//Fix bug here
+	//return layers;
+}
+
 //Network append a single layer function
 void Network::append(Layer new_layer){
 	layers.push_back(new_layer);
@@ -70,10 +76,14 @@ void Network::insert(Layer* new_layers, long position){
 
 //Network append a network to the existing one
 void Network::appendNetwork(Network new_network){
-	
+	//TODO: Fix bug here
+	std::vector<Layer> layers_to_add=new_network.getLayers();
+	this->append(layers_to_add);
 }
 
 //Network insert a network into a given position
 void Network::insertNetwork(Network new_network, long position){
-	
+	//TODO: Fix bug here
+	std::vector<Layer> layers_to_add=new_network.getLayers();
+	this->insert(layers_to_add,position);
 }

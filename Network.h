@@ -15,6 +15,7 @@ public:
 	Network();
 	Network(std::vector<Layer> new_layers);
 	Network(Layer* new_layers);
+	std::vector<Layer> getLayers();
 	void append(Layer new_layer);
 	void append(std::vector<Layer> new_layers);
 	void append(Layer* new_layers, long num_new_layers);
