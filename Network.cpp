@@ -1,5 +1,6 @@
 # include "Network.h"
 # include "Layer.cpp"
+#include <stdexcept>
 
 //Network constructor function with no parameters
 Network::Network(){
@@ -13,8 +14,8 @@ Network::Network(std::vector<Layer> new_layers){
 
 //Network constructor function with starting array of Layers
 Network::Network(Layer* new_layers){
-    int n = sizeof(new_layers) / sizeof(new_layers[0]);
-    layers = std::vector<Layer>(new_layers, new_layers + n);
+    int array_size = sizeof(new_layers) / sizeof(new_layers[0]);
+    layers = std::vector<Layer>(new_layers, new_layers + array_size);
 }
 
 //Network append a single layer function
@@ -29,12 +30,18 @@ void Network::append(std::vector<Layer> new_layers){
 
 //Network append an array of layers function
 void Network::append(Layer* new_layers, int num_new_layers){
-	
+	int size_of_array = sizeof(new_layers) / sizeof(new_layers[0]);
+    layers.insert(layers.end(), new_layers, new_layers+ size_of_array);
 }
 
 //Network insert layer into given position function
 void Network::insert(Layer new_layer, int position){
-	
+	std::vector<Layer>::iterator insert_position = layers.begin() + position;
+    if (insert_position >= layers.begin() && insert_position <= layers.end()){
+        layers.insert(insert_position, new_layer);
+    } else {
+        throw std::out_of_range("Invalid position");
+    }
 }
 
 //Network insert vector of layers into a given position function
