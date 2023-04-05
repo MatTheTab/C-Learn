@@ -87,3 +87,32 @@ void Network::insertNetwork(Network new_network, long position){
 	std::vector<Layer> layers_to_add=new_network.getLayers();
 	this->insert(layers_to_add,position);
 }
+
+
+void Network::predict(double* input_data){
+//TODO: Fill	
+}
+	
+void Network::predict(std::vector<double> input_data){
+//TODO: Fill
+}
+	
+double* returnPredict(double* input_data){
+//TODO: Fill	
+}
+
+double* returnPredict(std::vector<double> input_data){
+//TODO: Fill	
+}
+	
+double* getOutput(){
+//TODO: Fill	
+}
+	
+double* getLayerWeights(){
+//TODO: Fill	
+}
+
+double** getWeights(){
+//TODO: Fill	
+}

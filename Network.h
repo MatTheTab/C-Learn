@@ -24,6 +24,13 @@ public:
 	void insert(Layer* new_layers, long position);
 	void appendNetwork(Network new_network);
 	void insertNetwork(Network new_network, long position);
+	void predict(double* input_data);
+	void predict(std::vector<double> input_data);
+	double* returnPredict(double* input_data);
+	double* returnPredict(std::vector<double> input_data);
+	double* getOutput();
+	double* getLayerWeights();
+	double** getWeights();
 };
 
 #endif
