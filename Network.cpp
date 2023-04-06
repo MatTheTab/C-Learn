@@ -48,10 +48,12 @@ void Network::append(Layer* new_layers, long num_new_layers){
 
 //Network insert layer into given position function
 void Network::insert(Layer new_layer, long position){
+	//Find insert position with respect to layers starting position
 	std::vector<Layer>::iterator insert_position = layers.begin() + position;
     if (insert_position >= layers.begin() && insert_position <= layers.end()){
         layers.insert(insert_position, new_layer);
     } else {
+    	//Error cuased by invalid insertion position
         throw std::out_of_range("Invalid position");
     }
 }
@@ -59,20 +61,24 @@ void Network::insert(Layer new_layer, long position){
 //Network insert vector of layers into a given position function
 void Network::insert(std::vector<Layer> new_layers, long position){
 	std::vector<Layer>::iterator insert_position = layers.begin() + position;
+	//Find insert position with respect to layers starting position
     if (insert_position >= layers.begin() && insert_position <= layers.end()){
         layers.insert(insert_position, new_layers.begin(), new_layers.end());
     } else {
+    	//Error cuased by invalid insertion position
         throw std::out_of_range("Invalid position");
     }
 }
 
 //Network insert an array of layers into a given position function
 void Network::insert(Layer* new_layers, long position){
-		std::vector<Layer>::iterator insert_position = layers.begin() + position;
+	std::vector<Layer>::iterator insert_position = layers.begin() + position;
+	//Find insert position with respect to layers starting position
     if (insert_position >= layers.begin() && insert_position <= layers.end()){
     	long size_of_array = sizeof(new_layers) / sizeof(new_layers[0]);
         layers.insert(insert_position, new_layers, new_layers+size_of_array);
     } else {
+    	//Error cuased by invalid insertion position
         throw std::out_of_range("Invalid position");
     }
 }
