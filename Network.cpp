@@ -108,22 +108,31 @@ void Network::predict(std::vector<double> input_data){
 	this->layers[this->layers.size()-1].getLoss(true);
 }
 	
-double* returnPredict(double* input_data){
-//TODO: Fill	
+double* Network::returnPredict(double* input_data){
+	this->layers[0].inputValues(input_data);
+	for(int i=1;this->layers.size()-2;i++){
+		this->layers[i].feedForwards();
+	}
+	return this->layers[this->layers.size()-1].getLoss(true);
 }
 
-double* returnPredict(std::vector<double> input_data){
-//TODO: Fill	
+double* Network::returnPredict(std::vector<double> input_data){
+	double* input_array = new double(input_data.size());
+	this->layers[0].inputValues(input_array);
+	for(int i=1;this->layers.size()-2;i++){
+		this->layers[i].feedForwards();
+	}
+	return this->layers[this->layers.size()-1].getLoss(true);	
 }
 	
-double* getOutput(){
-//TODO: Fill	
+double* Network::getOutput(){
+	return this->layers[this->layers.size()].getValues();
 }
 	
-double* getLayerWeights(){
-//TODO: Fill	
+double* Network::getLayerWeights(int layer_num){
+//TODO:fill
 }
 
-double** getWeights(){
+double** Network::getWeights(){
 //TODO: Fill	
 }

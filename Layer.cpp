@@ -104,6 +104,11 @@ double* Layer::getValues(){
 	return neuron_values;
 }
 
+//Layer function for getting values of weights of neurons
+double* getWeights(){
+	//TODO:fill
+}
+
 //Layer function for getting number of neurons
 int Layer::getNumNeurons(){
 	return num_neurons;

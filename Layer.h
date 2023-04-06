@@ -23,6 +23,7 @@ public:
     double* getLoss(bool change_neuron_vals=true, double* inputs=NULL, bool manual_input=false);
 	void printWeights();
 	double* getValues();
+	double* getWeights();
 	int getNumNeurons();
 	void setPreviousLayer(Layer* _prev_layer);
 	void setWeights(double** new_weights);

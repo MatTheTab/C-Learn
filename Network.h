@@ -29,7 +29,7 @@ public:
 	double* returnPredict(double* input_data);
 	double* returnPredict(std::vector<double> input_data);
 	double* getOutput();
-	double* getLayerWeights();
+	double* getLayerWeights(int layer_num);
 	double** getWeights();
 };
 

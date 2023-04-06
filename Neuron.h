@@ -26,6 +26,7 @@ public:
     void assign_value(double _value);
     void printValues();
 	void printWeights();
+	double* getWeights();
 	double getValue();
 };
 
