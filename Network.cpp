@@ -23,6 +23,7 @@ Network::Network(Layer* new_layers){
     layers = std::vector<Layer>(new_layers, new_layers + array_size);
 }
 
+//Network getLayers() function for returning all layers present in a Network
 std::vector<Layer> getLayers(){
 	//TODO:
 	//Fix bug here
@@ -90,7 +91,9 @@ void Network::insertNetwork(Network *new_network, long position){
 	this->insert(layers_to_add,position);
 }
 
-
+//Network function responsible for passing input_data array into the function, the function does not return anything but 
+//automatically updates values of all neurons according to values dictated by getLoss() and activate()
+//functions defined at layer level
 void Network::predict(double* input_data){
 	this->layers[0].inputValues(input_data);
 	for(int i=1;this->layers.size()-2;i++){
@@ -98,7 +101,10 @@ void Network::predict(double* input_data){
 	}
 	this->layers[this->layers.size()-1].getLoss(true);
 }
-	
+
+//Network function responsible for passing input_data vector into the function, the function does not return anything but 
+//automatically updates values of all neurons according to values dictated by getLoss() and activate()
+//functions defined at layer level
 void Network::predict(std::vector<double> input_data){
 	double* input_array = new double(input_data.size());
 	this->layers[0].inputValues(input_array);
@@ -107,7 +113,10 @@ void Network::predict(std::vector<double> input_data){
 	}
 	this->layers[this->layers.size()-1].getLoss(true);
 }
-	
+
+//Network function responsible for passing input_data array into the function and returning an array corresponding to output values present
+//at the last layer of neural network, automatically updates values of all neurons according to values dictated by getLoss() and activate()
+//functions defined at layer level
 double* Network::returnPredict(double* input_data){
 	this->layers[0].inputValues(input_data);
 	for(int i=1;this->layers.size()-2;i++){
@@ -116,6 +125,9 @@ double* Network::returnPredict(double* input_data){
 	return this->layers[this->layers.size()-1].getLoss(true);
 }
 
+//Network function responsible for passing input_data vector into the function and returning an array corresponding to output values present
+//at the last layer of neural network, automatically updates values of all neurons according to values dictated by getLoss() and activate()
+//functions defined at layer level
 double* Network::returnPredict(std::vector<double> input_data){
 	double* input_array = new double(input_data.size());
 	this->layers[0].inputValues(input_array);
@@ -124,15 +136,18 @@ double* Network::returnPredict(std::vector<double> input_data){
 	}
 	return this->layers[this->layers.size()-1].getLoss(true);	
 }
-	
+
+//Network function for getting the currently last saved values for the output layer of the neural network
 double* Network::getOutput(){
 	return this->layers[this->layers.size()].getValues();
 }
-	
+
+//Network function for returning Layer-level weights from a Network
 double* Network::getLayerWeights(int layer_num){
 //TODO:fill
 }
 
+//Network function for getting all weights present in a Network
 double** Network::getWeights(){
 //TODO: Fill	
 }
