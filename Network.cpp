@@ -100,7 +100,12 @@ void Network::predict(double* input_data){
 }
 	
 void Network::predict(std::vector<double> input_data){
-//TODO: Fill
+	double* input_array = new double(input_data.size());
+	this->layers[0].inputValues(input_array);
+	for(int i=1;this->layers.size()-2;i++){
+		this->layers[i].feedForwards();
+	}
+	this->layers[this->layers.size()-1].getLoss(true);
 }
 	
 double* returnPredict(double* input_data){
