@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Layer.h"
+#include "Optimizer.h"
 
 //TODO:
 // Later add functionality so that you can add a single neuron to a chosen layer
@@ -11,10 +12,14 @@
 class Network{
 private:
 	std::vector<Layer> layers;
+	Optimizer* optimizer;
 public:
 	Network();
 	Network(std::vector<Layer> new_layers);
+	Network(Optimizer* _optimizer);
+	Network(std::vector<Layer> new_layers, Optimizer* _optimizer);
 	Network(Layer* new_layers);
+	void setOptimizer(Optimizer* _optimizer);
 	std::vector<Layer> getLayers();
 	void append(Layer new_layer);
 	void append(std::vector<Layer> new_layers);
