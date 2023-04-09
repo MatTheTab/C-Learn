@@ -6,10 +6,12 @@
 
 //TODO:
 //Add some comments here for clarity, so someone else can understand this code
+//implement constructor with addition of layer insertion through list
+//Change all Methods so they work for a list
 
 //Network constructor function with no parameters
 Network::Network(){
-	std::vector<Layer> layers();
+	std::list<Layer> layers;
 }
 
 //Network constructor function with starting vector of Layers
