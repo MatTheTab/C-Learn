@@ -140,11 +140,12 @@ void Network::insertNetwork(Network *new_network, long position){
 //automatically updates values of all neurons according to values dictated by getLoss() and activate()
 //functions defined at layer level
 void Network::predict(double* input_data){
-	this->layers[0].inputValues(input_data);
+	//TODO: Check if below works for c++ 11
+	this->layers.front().inputValues(input_data);
 	for(int i=1;this->layers.size()-2;i++){
-		this->layers[i].feedForwards();
+		this->*next(layers.begin(), i)->feedForwards();
 	}
-	this->layers[this->layers.size()-1].getLoss(true);
+	this->*next(layers.begin(), this->layers.size()-1)->getLoss(true);
 }
 
 //Network function responsible for passing input_data vector into the function, the function does not return anything but 
@@ -154,6 +155,8 @@ void Network::predict(std::vector<double> input_data){
 	double* input_array = new double(input_data.size());
 	this->layers[0].inputValues(input_array);
 	for(int i=1;this->layers.size()-2;i++){
+		this->(*std::next(mylist.begin(), i))->feedForwards();
+    	int third_element = *it;
 		this->layers[i].feedForwards();
 	}
 	this->layers[this->layers.size()-1].getLoss(true);
