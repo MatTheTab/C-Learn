@@ -22,7 +22,7 @@ public:
 	Network(Layer* new_layers);
 	Network(Layer* new_layers, Optimizer* _optimizer);
 	Network(std::list<Layer> new_layers);
-	Network(std::list<Layer> new_layers);
+	Network(std::list<Layer> new_layers, Optimizer* _optimizer);
 	void setOptimizer(Optimizer* _optimizer);
 	std::vector<Layer> getLayers();
 	void append(Layer new_layer);
