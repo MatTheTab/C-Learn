@@ -16,7 +16,7 @@ Network::Network(){
 
 //Network constructor function with starting vector of Layers
 Network::Network(std::vector<Layer> new_layers){
-    std::vector<Layer> layers(new_layers.begin(), new_layers.end());
+    std::list<Layer> layers(new_layers.begin(), new_layers.end());
 }
 
 //Network constructor function with starting optimizer parameter
