@@ -26,20 +26,20 @@ Network::Network(Optimizer* _optimizer){
 
 //Network constructor function with starting vector of layers and optimizer parameters
 Network::Network(std::vector<Layer> new_layers, Optimizer* _optimizer){
-	std::vector<Layer> layers(new_layers.begin(), new_layers.end());
+	std::list<Layer> layers(new_layers.begin(), new_layers.end());
 	this->optimizer=_optimizer;
 }
 
 //Network constructor function with starting array of Layers
 Network::Network(Layer* new_layers){
     long array_size = sizeof(new_layers) / sizeof(new_layers[0]);
-    layers = std::vector<Layer>(new_layers, new_layers + array_size);
+    layers = std::list<Layer>(new_layers, new_layers + array_size);
 }
 
 //Network constructor function with starting array of layers and optimizer parameters
 Network::Network(Layer* new_layers, Optimizer* _optimizer){
 	long array_size = sizeof(new_layers) / sizeof(new_layers[0]);
-    layers = std::vector<Layer>(new_layers, new_layers + array_size);
+    layers = std::list<Layer>(new_layers, new_layers + array_size);
     this->optimizer=_optimizer;
 }
 
