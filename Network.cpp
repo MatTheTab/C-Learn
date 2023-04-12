@@ -82,6 +82,13 @@ void Network::append(Layer* new_layers){
     layers.insert(layers.end(), new_layers, new_layers+ size_of_array);
 }
 
+//Network append a network to the existing one
+void Network::append(Network *new_network){
+	//TODO: Fix bug here
+	std::list<Layer> layers_to_add=new_network->getLayers();
+	this->append(layers_to_add);
+}
+
 //Network insert layer into given position function
 void Network::insert(Layer new_layer, long position){
 	//Find insert position with respect to layers starting position
@@ -122,15 +129,8 @@ void Network::insert(Layer* new_layers, long position){
     }
 }
 
-//Network append a network to the existing one
-void Network::appendNetwork(Network *new_network){
-	//TODO: Fix bug here
-	std::list<Layer> layers_to_add=new_network->getLayers();
-	this->append(layers_to_add);
-}
-
 //Network insert a network into a given position
-void Network::insertNetwork(Network *new_network, long position){
+void Network::insert(Network *new_network, long position){
 	//TODO: Fix bug here
 	std::list<Layer> layers_to_add=new_network->getLayers();
 	this->insert(layers_to_add,position);
