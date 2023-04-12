@@ -76,6 +76,11 @@ void Network::append(std::vector<Layer> new_layers){
     layers.insert(layers.end(), new_layers.begin(), new_layers.end());
 }
 
+//Network append list of layers function
+void Network::append(std::list<Layer> new_layers){
+	layers.insert(layers.end(), new_layers.begin(), new_layers.end());
+}
+
 //Network append an array of layers function
 void Network::append(Layer* new_layers){
 	long size_of_array = sizeof(new_layers) / sizeof(new_layers[0]);
@@ -104,6 +109,19 @@ void Network::insert(Layer new_layer, long position){
 
 //Network insert vector of layers into a given position function
 void Network::insert(std::vector<Layer> new_layers, long position){
+	//Find insert position with respect to layers starting position
+	std::list<Layer>::iterator it = layers.begin();
+	std::advance(it, position);
+    if (it != layers.end()){
+        layers.insert(it, new_layers.begin(),new_layers.end());
+    } else {
+    	//Error cuased by invalid insertion position
+        throw std::out_of_range("Invalid position");
+    }
+}
+
+//Network insert list of layers into a given position function
+void Network::insert(std::list<Layer> new_layers, long position){
 	//Find insert position with respect to layers starting position
 	std::list<Layer>::iterator it = layers.begin();
 	std::advance(it, position);

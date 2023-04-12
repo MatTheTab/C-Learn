@@ -27,10 +27,12 @@ public:
 	std::list<Layer> getLayers();
 	void append(Layer new_layer);
 	void append(std::vector<Layer> new_layers);
+	void append(std::list<Layer> new_layers);
 	void append(Layer* new_layers);
 	void append(Network* new_network);
 	void insert(Layer new_layer, long position);
 	void insert(std::vector<Layer> new_layers, long position);
+	void insert(std::list<Layer> new_layers, long position);
 	void insert(Layer* new_layers, long position);
 	void insert(Network* new_network, long position);
 	void predict(double* input_data);
