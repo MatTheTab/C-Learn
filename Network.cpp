@@ -60,10 +60,8 @@ void Network::setOptimizer(Optimizer* _optimizer){
 }
 
 //Network getLayers() function for returning all layers present in a Network
-std::vector<Layer> getLayers(){
-	//TODO:
-	//Fix bug here
-	//return layers;
+std::list<Layer> Network::getLayers(){
+	return layers;
 }
 
 //Network append a single layer function
