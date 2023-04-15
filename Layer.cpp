@@ -1,6 +1,7 @@
 # include "Layer.h"
 # include "Neuron.cpp"
 
+//TODO: Make it easier to create a Layer
 //Layer constructor function
 Layer::Layer(int _num_neurons, double (*_activation_function)(double), bool add_prev_layer, Layer* _prev_layer){
 	//Initializing the Layer with set number of neurons

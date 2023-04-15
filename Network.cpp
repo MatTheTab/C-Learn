@@ -7,7 +7,7 @@
 //TODO:
 //Add some comments here for clarity, so someone else can understand this code
 //implement constructor with addition of layer insertion through list
-//Change all Methods so they work for a list
+//Make it easier to create a network for the user
 
 //Network constructor function with no parameters
 Network::Network(){
