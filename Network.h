@@ -37,6 +37,13 @@ public:
 	void insert(Network* new_network, long position);
 	void predict(double* input_data);
 	void predict(std::vector<double> input_data);
+	//New Methods
+	//TODO: implement these new Methods
+	void createInputLayer(double num_neurons);
+	void createLayer(double num_neurons, std::string name_activation_function);
+	void createManyLayers(double* nums_neurons, std::string* names_activation_functions);
+	void createManyLayers(std::vector<double> nums_neurons, std::vector<std::string> names_activation_functions);
+	//End new Methods
 	double* returnPredict(double* input_data);
 	double* returnPredict(std::vector<double> input_data);
 	double* getOutput();
