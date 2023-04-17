@@ -41,6 +41,9 @@ public:
 	//TODO: implement these new Methods
 	void createInputLayer(double num_neurons);
 	void createLayer(double num_neurons, std::string name_activation_function);
+	void createLayer(double num_neurons, double (*_activation_function)(double));
+	void createOutputLayer(double num_neurons, std::string name_activation_function, std::string name_loss_function);
+	void createOutputLayer(double num_neurons, double (*_activation_function)(double), double (*Loss_Function)(double*, double, int));
 	void createManyLayers(double* nums_neurons, std::string* names_activation_functions);
 	void createManyLayers(std::vector<double> nums_neurons, std::vector<std::string> names_activation_functions);
 	//End new Methods
