@@ -8,6 +8,7 @@
 //Add some comments here for clarity, so someone else can understand this code
 //implement constructor with addition of layer insertion through list
 //Make it easier to create a network for the user
+//Fix unexpected bug
 
 //Network constructor function with no parameters
 Network::Network(){
@@ -182,7 +183,7 @@ void Network::createInputLayer(long num_neurons){
 
 //Network function responsible for creating and adding a layer with specified activation function and number of neurons
 void Network::createLayer(long num_neurons, Activation_Function _activation_function){
-		Layer* new_layer = new Layer(num_neurons, _activation_function, true, this->layers.back());
+		Layer* new_layer = new Layer(num_neurons);
 		this->append(new_layer);
 }
 
