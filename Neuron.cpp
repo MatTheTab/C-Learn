@@ -4,7 +4,7 @@
 const int RANDOM_MAX=10;
 
 //Neuron constructor function
-Neuron::Neuron(int _num_weights, double (*_activation_function)(double)){
+Neuron::Neuron(int _num_weights, Activation_Function _activation_function){
 	// Initializing the Neuron with a set number of weights
 	this->num_weights=_num_weights;
 	//TODO: possibly change this later
@@ -28,6 +28,11 @@ void Neuron::setWeights(double* new_weights){
 	for(int i=0;i<num_weights;i++){
 		weights[i]=new_weights[i];
 	}
+}
+
+//Neuron setActivationFunction method
+void Neuron::setActivationFunction(Activation_Function _activation_function){
+	this->activation_function=_activation_function;
 }
 
 //Neuron weighted sum function
