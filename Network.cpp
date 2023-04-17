@@ -181,9 +181,8 @@ void Network::createInputLayer(double num_neurons){
 }
 
 //Network function responsible for creating and adding a layer with specified activation function and number of neurons
-void Network::createLayer(double num_neurons, std::string name_activation_function){
-	Layer* new_layer= new Layer(num_neurons, linear,true, NULL);
-	this->append(new_layer);
+void createLayer(double num_neurons, Activation_Function _activation_function){
+		
 }
 
 //Network function responsible for passing input_data array into the function and returning an array corresponding to output values present

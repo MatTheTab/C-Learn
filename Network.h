@@ -40,10 +40,10 @@ public:
 	//New Methods
 	//TODO: implement these new Methods
 	void createInputLayer(double num_neurons);
-	void createLayer(double num_neurons, double (*_activation_function)(double));
-	void createOutputLayer(double num_neurons, double (*_activation_function)(double), Loss_Function _loss_function);
-	void createManyLayers(double* nums_neurons, std::string* names_activation_functions);
-	void createManyLayers(std::vector<double> nums_neurons, std::vector<std::string> names_activation_functions);
+	void createLayer(double num_neurons, Activation_Function _activation_function);
+	void createOutputLayer(double num_neurons, Activation_Function _activation_function, Loss_Function _loss_function);
+	void createManyLayers(double* nums_neurons, Activation_Function* activation_functions);
+	void createManyLayers(std::vector<double> nums_neurons, std::vector<Activation_Function> activation_functions);
 	//End new Methods
 	double* returnPredict(double* input_data);
 	double* returnPredict(std::vector<double> input_data);
