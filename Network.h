@@ -39,11 +39,11 @@ public:
 	void predict(std::vector<double> input_data);
 	//New Methods
 	//TODO: implement these new Methods
-	void createInputLayer(double num_neurons);
-	void createLayer(double num_neurons, Activation_Function _activation_function);
-	void createOutputLayer(double num_neurons, Activation_Function _activation_function, Loss_Function _loss_function);
-	void createManyLayers(double* nums_neurons, Activation_Function* activation_functions);
-	void createManyLayers(std::vector<double> nums_neurons, std::vector<Activation_Function> activation_functions);
+	void createInputLayer(long num_neurons);
+	void createLayer(long num_neurons, Activation_Function _activation_function);
+	void createOutputLayer(long num_neurons, Activation_Function _activation_function, Loss_Function _loss_function);
+	void createManyLayers(long* nums_neurons, Activation_Function* activation_functions);
+	void createManyLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions);
 	//End new Methods
 	double* returnPredict(double* input_data);
 	double* returnPredict(std::vector<double> input_data);

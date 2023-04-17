@@ -175,14 +175,15 @@ void Network::predict(std::vector<double> input_data){
 }
 
 //Network function responsible for creating and adding an input layer of specified size to the Network
-void Network::createInputLayer(double num_neurons){
+void Network::createInputLayer(long num_neurons){
 	Layer* input_layer = new Layer(num_neurons,linear,false, NULL);
 	this->append(input_layer);
 }
 
 //Network function responsible for creating and adding a layer with specified activation function and number of neurons
-void createLayer(double num_neurons, Activation_Function _activation_function){
-		
+void Network::createLayer(long num_neurons, Activation_Function _activation_function){
+		Layer* new_layer = new Layer(num_neurons, _activation_function, true, this->layers.back());
+		this->append(new_layer);
 }
 
 //Network function responsible for passing input_data array into the function and returning an array corresponding to output values present

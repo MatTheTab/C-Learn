@@ -13,7 +13,7 @@ private:
     Layer* prev_layer;
 
 public:
-    Layer(int num_neurons, Activation_Function _activation_function=linear, bool add_prev_layer=false, Layer* _prev_layer=NULL);
+    Layer(long num_neurons, Activation_Function _activation_function=linear, bool add_prev_layer=false, Layer* _prev_layer=NULL);
     ~Layer();
     void inputValues(double *inputs);
     void feedForwards();
