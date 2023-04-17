@@ -174,6 +174,12 @@ void Network::predict(std::vector<double> input_data){
 	this->predict(input_array);
 }
 
+//Network function responsible for creating and adding an input layer of specified size to the Network
+void Network::createInputLayer(double num_neurons){
+	Layer* input_layer = new Layer(num_neurons,linear);
+	this->append(input_layer);
+}
+
 //Network function responsible for passing input_data array into the function and returning an array corresponding to output values present
 //at the last layer of neural network, automatically updates values of all neurons according to values dictated by getLoss() and activate()
 //functions defined at layer level
