@@ -3,7 +3,7 @@
 
 //TODO: Make it easier to create a Layer
 //Layer constructor function
-Layer::Layer(int _num_neurons, double (*_activation_function)(double), bool add_prev_layer, Layer* _prev_layer){
+Layer::Layer(int _num_neurons, Activation_Function _activation_function, bool add_prev_layer, Layer* _prev_layer){
 	//Initializing the Layer with set number of neurons
 	this->num_neurons=_num_neurons;
 	Neuron* neurons = (Neuron*)malloc(sizeof(Neuron)*_num_neurons);

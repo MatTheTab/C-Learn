@@ -5,8 +5,6 @@
 #include <vector>
 #include "Neuron.h"
 
-typedef double (*Loss_Function)(double*, double, int);
-
 class Layer{
 private:
 	int num_neurons;
@@ -15,7 +13,7 @@ private:
     Layer* prev_layer;
 
 public:
-    Layer(int num_neurons, double (*_activation_function)(double)=linear, bool add_prev_layer=false, Layer* _prev_layer=NULL);
+    Layer(int num_neurons, Activation_Function _activation_function=linear, bool add_prev_layer=false, Layer* _prev_layer=NULL);
     ~Layer();
     void inputValues(double *inputs);
     void feedForwards();
