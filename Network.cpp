@@ -195,6 +195,22 @@ void Network::createOutputLayer(long num_neurons, Activation_Function _activatio
 	this->append();
 }
 
+//Network function responsible for creating and adding multiple layers based on array of specified 
+//numbers of neurons and activation functions
+void Network::createManyLayers(long* nums_neurons, Activation_Function* activation_functions){
+	long num_layers=sizeof(nums_neurons) / sizeof(nums_neurons[0]);
+	if(num_layers==0){
+		throw std::runtime_error("Empty array passed as argument.");
+	}
+	if (num_layers != sizeof(activation_functions) / sizeof(activation_functions[0])) {
+        throw std::runtime_error("Number of elements in nums_neurons and activation_functions arrays are not the same.");
+    }
+	for(int i=0;i<num_layers;i++) {
+		Layer* new_layer = new Layer(nums_neurons[i], activation_functions[i], true, this->layers.end());
+		this->append(new_layer);
+	}
+}
+
 //Network function responsible for passing input_data array into the function and returning an array corresponding to output values present
 //at the last layer of neural network, automatically updates values of all neurons according to values dictated by getLoss() and activate()
 //functions defined at layer level
