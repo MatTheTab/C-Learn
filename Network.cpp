@@ -211,6 +211,10 @@ void Network::createManyLayers(long* nums_neurons, Activation_Function* activati
 	}
 }
 
+void Network::createManyLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions){
+	//TODO: Finish
+}
+
 //Network function responsible for passing input_data array into the function and returning an array corresponding to output values present
 //at the last layer of neural network, automatically updates values of all neurons according to values dictated by getLoss() and activate()
 //functions defined at layer level
