@@ -43,11 +43,9 @@ public:
 	void createLayers(long* nums_neurons, Activation_Function* activation_functions);
 	void createLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions);
 	void createLayers(std::list<long> nums_neurons, std::list<Activation_Function> activation_functions);
-	//New functions
 	void createLayers(long* nums_neurons, Activation_Function* activation_functions, long position);
 	void createLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions, long position);
 	void createLayers(std::list<long> nums_neurons, std::list<Activation_Function> activation_functions, long position);
-	//End of new functions
 	double* returnPredict(double* input_data);
 	double* returnPredict(std::vector<double> input_data);
 	double* getOutput();
