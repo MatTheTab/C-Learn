@@ -243,6 +243,37 @@ void Network::createLayers(std::list<long> nums_neurons, std::list<Activation_Fu
 	}
 }
 
+//Network function responsible for creating and adding multiple layers based on lists of specified 
+//numbers of neurons and activation functions and inserting them into specified positions
+void Network::createLayers(long* nums_neurons, Activation_Function* activation_functions, long position){
+	long num_layers=sizeof(nums_neurons) / sizeof(nums_neurons[0]);
+	if(num_layers==0){
+		throw std::runtime_error("Empty array passed as argument.");
+	}
+	if (num_layers != sizeof(activation_functions) / sizeof(activation_functions[0])) {
+        throw std::runtime_error("Number of elements in nums_neurons and activation_functions arrays are not the same.");
+    }
+    if (position<0 || position>this->layers.size()){
+    	throw std::out_of_range("Invalid position");
+	}
+	//get insertion layer
+	std::list<Layer>::iterator it;
+	for (it = this->layers.begin(); it != this->position; ++it){
+	}
+	//insert first layer
+	Layer* new_layer = new Layer(nums_neurons[i], activation_functions[i], true, it);
+	this->insert(new_layer,position);
+	it++;
+	//insert remaining layers
+	for(int i=0;i<num_layers;i++) {
+		Layer* new_layer = new Layer(nums_neurons[i], activation_functions[i], true, it);
+		this->insert(new_layer,position);
+		it++;
+	}
+}
+
+
+
 //Network function responsible for passing input_data array into the function and returning an array corresponding to output values present
 //at the last layer of neural network, automatically updates values of all neurons according to values dictated by getLoss() and activate()
 //functions defined at layer level
