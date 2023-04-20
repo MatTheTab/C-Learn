@@ -197,7 +197,7 @@ void Network::createOutputLayer(long num_neurons, Activation_Function _activatio
 
 //Network function responsible for creating and adding multiple layers based on arrays of specified 
 //numbers of neurons and activation functions
-void Network::createManyLayers(long* nums_neurons, Activation_Function* activation_functions){
+void Network::createLayers(long* nums_neurons, Activation_Function* activation_functions){
 	long num_layers=sizeof(nums_neurons) / sizeof(nums_neurons[0]);
 	if(num_layers==0){
 		throw std::runtime_error("Empty array passed as argument.");
@@ -213,7 +213,7 @@ void Network::createManyLayers(long* nums_neurons, Activation_Function* activati
 
 //Network function responsible for creating and adding multiple layers based on vectors of specified 
 //numbers of neurons and activation functions
-void Network::createManyLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions){
+void Network::createLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions){
 	if(nums_neurons.size()==0){
 		throw std::runtime_error("Empty vector passed as argument.");
 	}

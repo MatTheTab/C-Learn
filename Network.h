@@ -40,8 +40,8 @@ public:
 	void createInputLayer(long num_neurons);
 	void createLayer(long num_neurons, Activation_Function _activation_function);
 	void createOutputLayer(long num_neurons, Activation_Function _activation_function, Loss_Function _loss_function);
-	void createManyLayers(long* nums_neurons, Activation_Function* activation_functions);
-	void createManyLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions);
+	void createLayers(long* nums_neurons, Activation_Function* activation_functions);
+	void createLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions);
 	double* returnPredict(double* input_data);
 	double* returnPredict(std::vector<double> input_data);
 	double* getOutput();
