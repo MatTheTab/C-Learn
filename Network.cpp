@@ -206,7 +206,7 @@ void Network::createLayers(long* nums_neurons, Activation_Function* activation_f
         throw std::runtime_error("Number of elements in nums_neurons and activation_functions arrays are not the same.");
     }
 	for(int i=0;i<num_layers;i++) {
-		Layer* new_layer = new Layer(nums_neurons[i], activation_functions[i], true, this->layers.end());
+		Layer* new_layer = new Layer(nums_neurons[i], activation_functions[i], true, &(this->layers.back()));
 		this->append(new_layer);
 	}
 }
@@ -221,8 +221,8 @@ void Network::createLayers(std::vector<long> nums_neurons, std::vector<Activatio
 		throw std::runtime_error("Number of elements in nums_neurons and activation_functions vectors are not the same.");
 	}
 	for(int i=0;i<nums_neurons.size();i++){
-		Layer* new_layer = Layer(nums_neurons.get(i), activation_functions.get(i),true,this->layers.end());
-		this->append(new_layer);
+		Layer new_layer = Layer(nums_neurons[i], activation_functions[i],true,&(this->layers.back()));
+		this->append(&new_layer);
 	}
 }
 
