@@ -183,16 +183,16 @@ void Network::createInputLayer(long num_neurons){
 
 //Network function responsible for creating and adding a layer with specified activation function and number of neurons
 void Network::createLayer(long num_neurons, Activation_Function _activation_function){
-	Layer* new_layer = new Layer(num_neurons, _activation_function, true, this->layers.end());
+	Layer* new_layer = new Layer(num_neurons, _activation_function, true, &(this->layers.back()));
 	this->append(new_layer);
 }
 
 //Network function responsible for creating and adding an output layer with specified number of neurons,
 //activation and loss functions
 void Network::createOutputLayer(long num_neurons, Activation_Function _activation_function, Loss_Function _loss_function){
-	Layer* output_layer = new Layer(num_neurons, _activation_function, true, this->layers.end());
-	output_layer.setLoss(_loss_function);
-	this->append();
+	Layer* output_layer = new Layer(num_neurons, _activation_function, true, &(this->layers.back()));
+	output_layer->setLoss(_loss_function);
+	this->append(output_layer);
 }
 
 //Network function responsible for creating and adding multiple layers based on arrays of specified 
