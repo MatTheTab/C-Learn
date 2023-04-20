@@ -258,8 +258,8 @@ void Network::createLayers(long* nums_neurons, Activation_Function* activation_f
 	}
 	//get insertion layer
 	std::list<Layer>::iterator it;
+	//TODO: possibly change the below
 	int j=0;
-	//TODO:possibly change the below
 	for (it = this->layers.begin(); j != position; ++it){j++;}
 	//insert first layer
 	Layer* new_layer = new Layer(nums_neurons[0], activation_functions[0], true, &*it);
@@ -287,6 +287,7 @@ void Network::createLayers(std::vector<long> nums_neurons, std::vector<Activatio
 	}
 	//get insertion layer
 	std::list<Layer>::iterator it;
+	//TODO: possibly change the below
 	int j=0;
 	for (it = this->layers.begin(); j != position; ++it){j++;}
 	//insert first layer
@@ -315,6 +316,7 @@ void Network::createLayers(std::list<long> nums_neurons, std::list<Activation_Fu
 	}
 	//get insertion layer
 	std::list<Layer>::iterator it;
+	//TODO: possibly change the below
 	int j=0;
 	for (it = this->layers.begin(); j != position; ++it){j++;}
 	//insert first layer
