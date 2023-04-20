@@ -315,19 +315,20 @@ void Network::createLayers(std::list<long> nums_neurons, std::list<Activation_Fu
 	}
 	//get insertion layer
 	std::list<Layer>::iterator it;
-	for (it = this->layers.begin(); it != this->position; ++it){}
+	int j=0;
+	for (it = this->layers.begin(); j != position; ++it){j++;}
 	//insert first layer
 	std::list<long>::iterator it_neurons=nums_neurons.begin();
 	std::list<Activation_Function>::iterator it_functions=activation_functions.begin();
-	Layer* new_layer = new Layer(it_neurons, it_functions, true, it);
+	Layer* new_layer = new Layer(*it_neurons, *it_functions, true, &*it);
 	this->insert(new_layer,position);
 	it++;
 	it_neurons++;
 	it_functions++;
 	//insert remaining layers
 	for(int i=1;i<nums_neurons.size();i++){
-		Layer* new_layer = Layer(it_neurons, it_functions,true,it);
-		this->insert(new_layer, position);
+		Layer new_layer = Layer(*it_neurons, *it_functions,true,&*it);
+		this->insert(&new_layer, position);
 		it++;
 		it_neurons++;
 		it_functions++;
