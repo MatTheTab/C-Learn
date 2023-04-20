@@ -195,7 +195,7 @@ void Network::createOutputLayer(long num_neurons, Activation_Function _activatio
 	this->append();
 }
 
-//Network function responsible for creating and adding multiple layers based on array of specified 
+//Network function responsible for creating and adding multiple layers based on arrays of specified 
 //numbers of neurons and activation functions
 void Network::createManyLayers(long* nums_neurons, Activation_Function* activation_functions){
 	long num_layers=sizeof(nums_neurons) / sizeof(nums_neurons[0]);
@@ -211,8 +211,18 @@ void Network::createManyLayers(long* nums_neurons, Activation_Function* activati
 	}
 }
 
+//Network function responsible for creating and adding multiple layers based on vectors of specified 
+//numbers of neurons and activation functions
 void Network::createManyLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions){
-	//TODO: Finish
+	if(nums_neurons.size()==0){
+		throw std::runtime_error("Empty vector passed as argument.");
+	}
+	if(nums_neurons.size()!=activation_functions.size()){
+		throw std::runtime_error("Number of elements in nums_neurons and activation_functions vectors are not the same.");
+	}
+	for(int i=0;i<nums_neurons.size();i++){
+		Layer* new_layer = Layer(nums_neurons.get(i), activation_functions.get(i),true,this->layers.end());
+	}
 }
 
 //Network function responsible for passing input_data array into the function and returning an array corresponding to output values present
