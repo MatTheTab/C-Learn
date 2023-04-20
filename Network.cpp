@@ -230,10 +230,10 @@ void Network::createLayers(std::vector<long> nums_neurons, std::vector<Activatio
 //numbers of neurons and activation functions
 void Network::createLayers(std::list<long> nums_neurons, std::list<Activation_Function> activation_functions){
 	if(nums_neurons.size()==0){
-		throw std::runtime_error("Empty vector passed as argument.");
+		throw std::runtime_error("Empty list passed as argument.");
 	}
 	if(nums_neurons.size()!=activation_functions.size()){
-		throw std::runtime_error("Number of elements in nums_neurons and activation_functions vectors are not the same.");
+		throw std::runtime_error("Number of elements in nums_neurons and activation_functions lists are not the same.");
 	}
 	std::list<Activation_Function>::iterator it_2=activation_functions.end();
 	for (std::list<long>::iterator it = nums_neurons.begin(); it != nums_neurons.end(); ++it){
@@ -243,8 +243,8 @@ void Network::createLayers(std::list<long> nums_neurons, std::list<Activation_Fu
 	}
 }
 
-//Network function responsible for creating and adding multiple layers based on lists of specified 
-//numbers of neurons and activation functions and inserting them into specified positions
+//Network function responsible for creating and adding multiple layers based on arrays of specified 
+//numbers of neurons and activation functions and inserting them into specified position
 void Network::createLayers(long* nums_neurons, Activation_Function* activation_functions, long position){
 	long num_layers=sizeof(nums_neurons) / sizeof(nums_neurons[0]);
 	if(num_layers==0){
@@ -258,16 +258,42 @@ void Network::createLayers(long* nums_neurons, Activation_Function* activation_f
 	}
 	//get insertion layer
 	std::list<Layer>::iterator it;
-	for (it = this->layers.begin(); it != this->position; ++it){
-	}
+	for (it = this->layers.begin(); it != this->position; ++it){}
 	//insert first layer
-	Layer* new_layer = new Layer(nums_neurons[i], activation_functions[i], true, it);
+	Layer* new_layer = new Layer(nums_neurons[0], activation_functions[0], true, it);
 	this->insert(new_layer,position);
 	it++;
 	//insert remaining layers
 	for(int i=0;i<num_layers;i++) {
 		Layer* new_layer = new Layer(nums_neurons[i], activation_functions[i], true, it);
 		this->insert(new_layer,position);
+		it++;
+	}
+}
+
+//Network function responsible for creating and adding multiple layers based on vectors of specified 
+//numbers of neurons and activation functions and inserting them into specified position
+void Network::createLayers(std::vector<long> nums_neurons, std::vector<Activation_Function> activation_functions, long position){
+	if(nums_neurons.size()==0){
+		throw std::runtime_error("Empty vector passed as argument.");
+	}
+	if(nums_neurons.size()!=activation_functions.size()){
+		throw std::runtime_error("Number of elements in nums_neurons and activation_functions vectors are not the same.");
+	}
+    if (position<0 || position>this->layers.size()){
+    	throw std::out_of_range("Invalid position");
+	}
+	//get insertion layer
+	std::list<Layer>::iterator it;
+	for (it = this->layers.begin(); it != this->position; ++it){}
+	//insert first layer
+	Layer* new_layer = new Layer(nums_neurons.get_allocator(0), activation_functions.get(0), true, it);
+	this->insert(new_layer,position);
+	it++;
+	//insert remaining layers
+	for(int i=0;i<nums_neurons.size();i++){
+		Layer* new_layer = Layer(nums_neurons.get(i), activation_functions.get(i),true,it);
+		this->insert(new_layer, position);
 		it++;
 	}
 }
