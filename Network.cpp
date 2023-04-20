@@ -222,6 +222,24 @@ void Network::createLayers(std::vector<long> nums_neurons, std::vector<Activatio
 	}
 	for(int i=0;i<nums_neurons.size();i++){
 		Layer* new_layer = Layer(nums_neurons.get(i), activation_functions.get(i),true,this->layers.end());
+		this->append(new_layer);
+	}
+}
+
+//Network function responsible for creating and adding multiple layers based on lists of specified 
+//numbers of neurons and activation functions
+void Network::createLayers(std::list<long> nums_neurons, std::list<Activation_Function> activation_functions){
+	if(nums_neurons.size()==0){
+		throw std::runtime_error("Empty vector passed as argument.");
+	}
+	if(nums_neurons.size()!=activation_functions.size()){
+		throw std::runtime_error("Number of elements in nums_neurons and activation_functions vectors are not the same.");
+	}
+	std::list<Activation_Function>::iterator it_2=activation_functions.end();
+	for (std::list<long>::iterator it = nums_neurons.begin(); it != nums_neurons.end(); ++it){
+    	Layer* new_layer = Layer(it, it_2,true,this->layers.end());
+    	this->append(new_layer);
+    	it_2++;
 	}
 }
 
