@@ -20,44 +20,15 @@ Network::Network(std::vector<Layer> new_layers){
     std::list<Layer> layers(new_layers.begin(), new_layers.end());
 }
 
-//Network constructor function with starting optimizer parameter
-Network::Network(Optimizer* _optimizer){
-	this->optimizer=_optimizer;
-}
-
-//Network constructor function with starting vector of layers and optimizer parameters
-Network::Network(std::vector<Layer> new_layers, Optimizer* _optimizer){
-	std::list<Layer> layers(new_layers.begin(), new_layers.end());
-	this->optimizer=_optimizer;
-}
-
 //Network constructor function with starting array of Layers parameter
 Network::Network(Layer* new_layers){
     long array_size = sizeof(new_layers) / sizeof(new_layers[0]);
     layers = std::list<Layer>(new_layers, new_layers + array_size);
 }
 
-//Network constructor function with starting array of layers and optimizer parameters
-Network::Network(Layer* new_layers, Optimizer* _optimizer){
-	long array_size = sizeof(new_layers) / sizeof(new_layers[0]);
-    layers = std::list<Layer>(new_layers, new_layers + array_size);
-    this->optimizer=_optimizer;
-}
-
 //Network constructor function with starting linked list parameter
 Network::Network(std::list<Layer> new_layers){
 	layers = new_layers;
-}
-
-//Network constructor function with starting linked list and oprimizer parameters
-Network::Network(std::list<Layer> new_layers, Optimizer* _optimizer){
-	this->layers = new_layers;
-	this->optimizer=_optimizer;
-}
-
-//Network function for setting or changing the optimizer
-void Network::setOptimizer(Optimizer* _optimizer){
-	this->optimizer=_optimizer;
 }
 
 //Network getLayers() function for returning all layers present in a Network
@@ -258,7 +229,6 @@ void Network::createLayers(long* nums_neurons, Activation_Function* activation_f
 	}
 	//get insertion layer
 	std::list<Layer>::iterator it;
-	//TODO: possibly change the below
 	int j=0;
 	for (it = this->layers.begin(); j != position; ++it){j++;}
 	//insert first layer

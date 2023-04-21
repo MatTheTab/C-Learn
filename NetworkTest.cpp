@@ -1,6 +1,7 @@
 #include "Network.cpp"
 
 int main() {
+	//TODO: fill testing functionality
 	Network* test_network= new Network();
 	test_network->createInputLayer(5);
 	long neurons[5] = {3,7,7,9,5};
