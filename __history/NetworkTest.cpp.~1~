@@ -1,6 +1,6 @@
 #include "Network.cpp"
 
-int testNetwork() {
+int main() {
 	//TODO: fill testing functionality
 	Network* test_network= new Network();
 	test_network.createInputLayer(5);
