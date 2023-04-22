@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "Neuron.h"
-//#include "Neuron.cpp"
+#include "Neuron.cpp"
 
 using namespace std;
 

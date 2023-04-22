@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/04/22 22:27:21.896,=C:\Users\Komputer\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/04/22 22:27:22.584,=C:\Users\Komputer\OneDrive\Dokumenty\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.164,=C:\Users\Komputer\C-Learn\ActivationFunctions.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.195,=C:\Users\Komputer\C-Learn\ActivationFunctionsTests.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.242,=C:\Users\Komputer\C-Learn\Layer.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.274,=C:\Users\Komputer\C-Learn\LayerTest.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.305,=C:\Users\Komputer\C-Learn\Network.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.336,=C:\Users\Komputer\C-Learn\NetworkTest.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.383,=C:\Users\Komputer\C-Learn\Neuron.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.414,=C:\Users\Komputer\C-Learn\NeuronTest.cpp</Transaction>
+    <Transaction>2023/04/22 22:28:33.430,=C:\Users\Komputer\C-Learn\SGD.cpp</Transaction>
+    <Transaction>2023/04/22 22:34:32.085,C:\Users\Komputer\C-Learn\main.cpp=C:\Users\Komputer\OneDrive\Dokumenty\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2023/04/22 23:03:39.121,C:\Users\Komputer\C-Learn\Project1PCH1.h=C:\Users\Komputer\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/04/22 23:03:55.365,C:\Users\Komputer\C-Learn\C-LearnPCH1.h=C:\Users\Komputer\C-Learn\Project1PCH1.h</Transaction>
+    <Transaction>2023/04/22 23:03:55.380,C:\Users\Komputer\C-Learn\C-Learn.cbproj=C:\Users\Komputer\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

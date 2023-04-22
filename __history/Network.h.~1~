@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include <vector>
-//#include "Optimizer.h"
-#include <layer.h>
+#include "Optimizer.h"
 #include <list>
 
 //TODO:
@@ -14,7 +13,7 @@ class Network{
 private:
 	std::list<Layer> layers;
 public:
-	Network(void);
+	Network();
 	Network(std::vector<Layer> new_layers);
 	Network(Layer* new_layers);
 	Network(std::list<Layer> new_layers);

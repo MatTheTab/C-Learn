@@ -1,4 +1,4 @@
-//#include "Network.cpp"
+#include "Network.cpp"
 #include "Network.h"
 //Abstract optimizer class
 

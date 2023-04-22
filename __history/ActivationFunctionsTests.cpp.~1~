@@ -8,7 +8,7 @@ using namespace std;
     	return fabs(x - y) < epsilon;
 		}
 
-int testActivationFunctions() {
+int main() {
 	int arr_length=7;
     double inputs[] = {0.0, 1.0, 2.0, 3.0, -1.0, -7.5, 3.14};
     double linear_outputs[] = {0.0, 1.0, 2.0, 3.0, -1.0, -7.5, 3.14};

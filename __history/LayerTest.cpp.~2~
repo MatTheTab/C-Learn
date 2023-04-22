@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "Layer.h"
-//#include "Layer.cpp"
+#include "Layer.cpp"
 
 using namespace std;
 
