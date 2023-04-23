@@ -3,9 +3,12 @@
 //Abstract optimizer class
 
 class Optimizer {
-protected:
+private:
 	Network* my_network;
 public:
+	Optimizer();
+	Optimizer(Network* new_network);
+	setNetwork(Network* new_network);
     //TODO:
 	//Change the below possibly to include the input of data so that the
 	//Optimizer can feed the data to the Network

@@ -1,7 +1,17 @@
-#include "Optimizer.h"
+#include "SGD.h"
 //SGD optimizer class
 
-class SGD: public Optimizer {
-public:
-	SGD();
-};
+SGD::SGD(Network *new_network){
+	this->my_network=new_network;
+}
+
+void SGD::setNetwork(Network *new_network){
+	this->my_network=new_network;
+}
+
+void epoch(long num_epochs){
+	for(long current_epoch=0;current_epoch<num_epochs;current_epoch++){
+		//TODO:
+		//fill
+	}
+}

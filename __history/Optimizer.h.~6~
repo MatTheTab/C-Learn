@@ -3,7 +3,7 @@
 //Abstract optimizer class
 
 class Optimizer {
-protected:
+private:
 	Network* my_network;
 public:
     //TODO:
