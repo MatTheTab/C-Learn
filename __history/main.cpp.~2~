@@ -4,11 +4,6 @@ int testLayer();
 int testNeuron();
 int testNetwork();
 
-//TODO: For a whole file
-//possibly change the project into dynamic library type
-//possibly organise everything better into folders
-//Also implement bias
-
 int main()
 {
 	testActivationFunctions();

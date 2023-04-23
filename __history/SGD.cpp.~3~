@@ -17,6 +17,5 @@ void epoch(long num_epochs){
 }
 
 void step(double lr){
-	//TODO
-    //implement
+
 }
