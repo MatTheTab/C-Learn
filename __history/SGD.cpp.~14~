@@ -13,7 +13,6 @@ void SGD::setNetwork(Network *new_network){
 }
 
 void SGD::epoch(DataFrame data_frame, long num_epochs, double lr){
-//TODO: change weights from loss functions
 	long weight_index=0;
 	for(long current_epoch=0;current_epoch<num_epochs;current_epoch++){
 		for(long current_data_point=0;current_data_point<data_frame.size();current_data_point++){
