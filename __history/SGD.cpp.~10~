@@ -14,22 +14,20 @@ void SGD::setNetwork(Network *new_network){
 
 void SGD::epoch(long num_epochs, double lr){
 	for(long current_epoch=0;current_epoch<num_epochs;current_epoch++){
-		//For every datapoint/batch perform, for weight
 		this->step(lr);
 	}
 }
 
 void SGD::step(double lr){
-	//SGD=weight-lr*getGradient()
+	//getGradient()
 	//backPropagate()
 }
 
 //TODO: Is this even correct(?)
-double SGD::getGradient(double weight){
+double SGD::getGradient(){
 	//TODO: change, possibly idk
 	double epsilon=0.0000001;
-	return ((weight+epsilon)-weight)/epsilon;
-	//TODO: implement pass data to NN to get initial value
+
 }
 
 void SGD::backPropagate(){
