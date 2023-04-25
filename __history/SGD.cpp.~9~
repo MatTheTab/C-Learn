@@ -24,10 +24,7 @@ void SGD::step(double lr){
 }
 
 //TODO: Is this even correct(?)
-double SGD::getGradient(){
-	//TODO: change, possibly idk
-	double epsilon=0.0000001;
-
+void SGD::getGradient(){
 }
 
 void SGD::backPropagate(){
