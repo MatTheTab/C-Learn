@@ -9,6 +9,6 @@ public:
 	//Optimizer can feed the data to the Network
 	void epoch(DataFrame data_frame,long num_epochs, double lr);
 	void step(DataRow, data_row, double lr, long weight_index);
-	double getGradient(double network_error, double* weight);
+	double getGradient(double* weight);
 	void backPropagate();
 };

@@ -24,20 +24,16 @@ void SGD::epoch(DataFrame data_frame, long num_epochs, double lr){
 }
 
 void SGD::step(DataRow data_row, double lr, long weight_index){
-	//callculate network error
-	//weight*=weight at index
-	//weight-lr*getGradient()
+	//SGD=weight-lr*getGradient()
 	//backPropagate()
 }
 
 //TODO: Is this even correct(?)
-double SGD::getGradient(double network_error,double* weight){
+double SGD::getGradient(double* weight){
 	//TODO: change, possibly idk
 	double epsilon=0.0000001;
-	*weight+=epsilon;
-	double gradient=(getError(my_network)-network_error)/epsilon
-	*weight-=epsilon;
-	return gradient;
+	return ((&weight+epsilon)-weight)/epsilon;
+	//TODO: implement pass data to NN to get initial value
 }
 
 void SGD::backPropagate(){
