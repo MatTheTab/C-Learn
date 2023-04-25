@@ -41,5 +41,4 @@ double SGD::getGradient(double network_error,double* weight){
 }
 
 void SGD::backPropagate(){
-    //TODO: fill this later on...
 }
