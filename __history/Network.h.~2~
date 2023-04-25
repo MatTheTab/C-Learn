@@ -44,7 +44,6 @@ public:
 	double* returnPredict(std::vector<double> input_data);
 	double* getOutput();
 	double* getLayerWeights(int layer_num);
-    long getNumOutputWeights();
 	double** getWeights();
 };
 

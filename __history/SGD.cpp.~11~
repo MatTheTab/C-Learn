@@ -12,27 +12,23 @@ void SGD::setNetwork(Network *new_network){
 	this->my_network=new_network;
 }
 
-void SGD::epoch(DataFrame data_frame, long num_epochs, double lr){
-	long weight_index=0;
+void SGD::epoch(long num_epochs, double lr){
 	for(long current_epoch=0;current_epoch<num_epochs;current_epoch++){
-		for(long current_data_point=0;current_data_point<data_frame.size();current_data_point++){
-			this->step(data_frame[current_data_point],lr, weight_index);
-			weight_index++;
-			if(weight_index>=my_network.getNumOutputWeights()){ weight_index=0;	}
-		}
+		//For every datapoint/batch perform, for weight
+		this->step(lr);
 	}
 }
 
-void SGD::step(DataRow data_row, double lr, long weight_index){
+void SGD::step(double lr){
 	//SGD=weight-lr*getGradient()
 	//backPropagate()
 }
 
 //TODO: Is this even correct(?)
-double SGD::getGradient(double* weight){
+double SGD::getGradient(double weight){
 	//TODO: change, possibly idk
 	double epsilon=0.0000001;
-	return ((&weight+epsilon)-weight)/epsilon;
+	return ((weight+epsilon)-weight)/epsilon;
 	//TODO: implement pass data to NN to get initial value
 }
 

@@ -339,11 +339,6 @@ double* Network::getLayerWeights(int layer_num){
 //TODO:fill
 }
 
-long Network::getNumOutputWeights(){
-//TODO: change the below
-	return this->layers.back().size;
-}
-
 //Network function for getting all weights present in a Network
 double** Network::getWeights(){
 //TODO: Fill	
