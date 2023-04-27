@@ -24,7 +24,7 @@ Neuron::~Neuron(){
     delete[] weights;
 }
 
-//Neuron method for manually changing the bias for this object instance
+//Neuron method for manually changing the bias
 void Neuron::setBias(double new_bias){
 	bias=new_bias;
 }
