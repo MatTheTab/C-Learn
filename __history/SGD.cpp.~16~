@@ -19,7 +19,7 @@ void SGD::epoch(DataFrame data_frame, long num_epochs, double lr){
 		for(long current_data_point=0;current_data_point<data_frame.size();current_data_point++){
 			this->step(data_frame[current_data_point],lr, weight_index);
 			weight_index++;
-			if(weight_index>=my_network->getNumOutputWeights()){ weight_index=0;	}
+			if(weight_index>=my_network.getNumOutputWeights()){ weight_index=0;	}
 		}
 	}
 }
