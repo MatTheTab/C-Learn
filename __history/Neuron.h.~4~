@@ -26,8 +26,7 @@ public:
     Neuron(int _num_weights, Activation_Function _activation_function=linear);
     ~Neuron();
 	void setWeights(double* new_weights);
-	void setBias(double new_bias);
-    double* getBias();
+    void setBias(double new_bias);
     void setActivationFunction(Activation_Function _activation_function);
     double weightedSum(double *inputs);
     void activate(double *inputs);

@@ -28,7 +28,6 @@ void SGD::step(DataRow data_row, double lr, long weight_index){
 	double network_error=getError(my_network->predict(data_row));
 	//weight*=weight at index
 	//weight-lr*getGradient()
-	//update bias
 	//possibly change that
 	my_network->predict(data_row);
 	//backPropagate()

@@ -29,10 +29,6 @@ void Neuron::setBias(double new_bias){
 	bias=new_bias;
 }
 
-double* Neuron::getBias(){
-    return &bias;
-}
-
 //Neuron setWeights function
 void Neuron::setWeights(double* new_weights){
 	for(int i=0;i<num_weights;i++){
